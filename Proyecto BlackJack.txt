@@ -1,0 +1,10 @@
+Proyecto BlackJack
+
+Clase carta, no la usaré
+Clase Mano, Representa un conjunto de cartas.
+	La usaré para añadir a cada quien una mano
+		- Mano crupier
+		- Mano jugador
+Clase baraja: como tal ya está hecha
+
+Clase mesa: pensaré en cómo implementarlo, supongo que tendría las funciones de hit, double, stand
