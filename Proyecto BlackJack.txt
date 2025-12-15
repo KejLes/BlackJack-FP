@@ -21,7 +21,8 @@ Clase baraja: tiene la baraja ordenada
 	- Añadir la función repartir y que cree el objeto de mano (o lo hace el crupier?)
 Clase jugador: tiene una mano y dinero, y método para apostar
 	- No puede apostar más dinero del que tiene
-Clase crupier: tiene una mano, gestiona la baraja y reparte cartas (baraja las cartas a través de un método de la clase Baraja)
+Clase crupier: tiene una mano, gestiona la baraja y reparte cartas (baraja las cartas a
+través de un método de la clase Baraja)
 
 Main: orden para ejecutarlo todo y las impresiones, tiene las entradas de Scanner y maneja errores de entrada
 
@@ -35,3 +36,15 @@ En el double down, sólo se puede hacer si tienes el mismo o más del monto apos
 	Casos:
 		- Si tienes 20€ y apuestas 10€ puedes doblar, entonces tu apuesta sube a 20€
 		- Si tienes 15€ y apuestas 10€, no puedes doblar ya que sólo te quedan 5€
+		
+Nota: después de finalizar la partida, esta se puede reiniciar
+	El crupier usará su metodo reiniciarPartida que ejecutará los métodos
+	reiniciar de cada clase (Baraja y Mano[Crupier y Jugador])
+
+Cada vez que se le da una carta al jugador se llama a crupier.verificarGanador, y también se llama
+tras el crupier repartirse cartas a sí mismo.
+Espera, cómo verificar el resultado del juego, cada vez que se le da una
+carta al jugador, se verifica si ha sobrepasado 21, en el método repartirUnaCartaJugador
+se podrá devolver true o false, true si no se ha pasado de 21 y puede seguir jugando, 
+se aplica lo mismo para el turno del crupier, si ambos son mayores de 21 se 
+llama a otro método

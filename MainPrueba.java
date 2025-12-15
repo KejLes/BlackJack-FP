@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public class MainPrueba {
 	public static void main(String[] args) {
@@ -18,13 +17,15 @@ public class MainPrueba {
 		System.out.println(jugador.manoJugador.mano);
 		jugador.manoJugador.imprimirMano();
 		System.out.println(jugador.manoJugador.valorMano());
-
+ 
 		System.out.println(crupier.manoCrupier.mano);
 		crupier.manoCrupier.imprimirMano();
+		crupier.manoCrupier.imprimirManoSinOcultar();
 		System.out.println(crupier.manoCrupier.valorMano());
 
 		System.out.println(crupier.baraja.barajaCrupier);
 		System.out.println(crupier.baraja.barajaCrupier.size());
 		
+		crupier.reiniciarPartida();
 	}
 }

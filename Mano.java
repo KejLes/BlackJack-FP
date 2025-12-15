@@ -4,8 +4,7 @@ public class Mano {
 
 	public ArrayList<String> mano = new ArrayList<>();
 
-	public Mano() {
-	};
+	public Mano() {};
 
 	// Método para identificar el valor de las cartas
 	public int valorMano()
@@ -55,47 +54,57 @@ public class Mano {
 		}
 		return (valorMano);
 	}
-	// 				BORRAR?
-	// public void agregarCartasAMano(ArrayList<String> CartaIncorporar) {
-	// 	for (int i = 0; i < CartaIncorporar.size(); i++)
-	// 		mano.add(CartaIncorporar.get(i));
-	// }
+
+	// Reemplazar la carta oculta por la carta real y llamar a imprimirMano
+	public void imprimirManoSinOcultar() {
+		if (this.mano.get(0).contains("#"))
+			this.mano.set(0, this.mano.get(0).substring(1));
+		imprimirMano();
+	}
 
 	public void imprimirMano() {
-		// Imprimir linaa 1
-		for (int i = 0; i < this.mano.size(); i++)
-			System.out.print(" ___  ");
-		System.out.print("\n");
-		// Imprimir linea 2
-		for (int i = 0; i < this.mano.size(); i++) {
-			if (this.mano.get(i).charAt(0) == '#')
-				System.out.print("|## | ");
-			else if (this.mano.get(i).contains("10"))
-				System.out.print("|10 | ");
-			else
-				System.out.print("|" + this.mano.get(i).charAt(0) + "  | ");
-		}
-		System.out.print("\n");
-		// Imprimir linaa 3
-		for (int i = 0; i < this.mano.size(); i++) {
-			if (this.mano.get(i).charAt(0) == '#')
-				System.out.print("|###| ");
-			else if (this.mano.get(i).contains("10"))
-				System.out.print("| " + this.mano.get(i).charAt(2) + " | ");
-			else
-				System.out.print("| " + this.mano.get(i).charAt(1) + " | ");
-		}
-		System.out.print("\n");
-		// Imprimir linaa 4
-		for (int i = 0; i < this.mano.size(); i++) {
-			if (this.mano.get(i).charAt(0) == '#')
-				System.out.print("|_##| ");
-			else if (this.mano.get(i).contains("10"))
-				System.out.print("|_10| ");
-			else
+		try {
+			// Imprimir linaa 1
+			for (int i = 0; i < this.mano.size(); i++)
+				System.out.print(" ___  ");
+			System.out.print("\n");
+			// Imprimir linea 2
+			for (int i = 0; i < this.mano.size(); i++) {
+				if (this.mano.get(i).charAt(0) == '#')
+					System.out.print("|## | ");
+				else if (this.mano.get(i).contains("10"))
+					System.out.print("|10 | ");
+				else
+					System.out.print("|" + this.mano.get(i).charAt(0) + "  | ");
+			}
+			System.out.print("\n");
+			// Imprimir linaa 3
+			for (int i = 0; i < this.mano.size(); i++) {
+				if (this.mano.get(i).charAt(0) == '#')
+					System.out.print("|###| ");
+				else if (this.mano.get(i).contains("10"))
+					System.out.print("| " + this.mano.get(i).charAt(2) + " | ");
+				else
+					System.out.print("| " + this.mano.get(i).charAt(1) + " | ");
+			}
+			System.out.print("\n");
+			// Imprimir linaa 4
+			for (int i = 0; i < this.mano.size(); i++) {
+				if (this.mano.get(i).charAt(0) == '#')
+					System.out.print("|_##| ");
+				else if (this.mano.get(i).contains("10"))
+					System.out.print("|_10| ");
+				else
 
-				System.out.print("|__" + this.mano.get(i).charAt(0) + "| ");
+					System.out.print("|__" + this.mano.get(i).charAt(0) + "| ");
+			}
+			System.out.print("\n");
+		} catch (Exception e) {
+			System.out.println("Error al imprimir mano: " + e.getMessage());
 		}
-		System.out.print("\n");
+	}
+
+	public void reiniciarMano() {
+		mano.clear();
 	}
 }

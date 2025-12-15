@@ -26,20 +26,20 @@ public class Crupier{
 	}
 
 	//	Repartir una carta a jugador cuando lo solicite
-	public void repartirUnaCartaJugador()
+	public boolean repartirUnaCartaJugador()
 	{
 		jugador.manoJugador.mano.add(baraja.barajaCrupier.get(0));
 		baraja.barajaCrupier.remove(0);
-	}
+		return (jugador.manoJugador.valorMano() <= 21); // Devuelve true si el jugador no se ha pasado de 21, puede seguir jugando
+	}	
 
 	//	El crupier se reparte cartas a sí mismo hasta alcanzar un valor de mano igual o mayor a 17
-	public void turnoCrupier()
+	public boolean  turnoCrupier()
 	{
 		int valorManoCrupier;
 		while (true)
 		{
-			valorManoCrupier = manoCrupier.valorMano();
-			if (valorManoCrupier < 17)
+			if (manoCrupier.valorMano() < 17)
 			{
 				manoCrupier.mano.add(baraja.barajaCrupier.get(0));
 				baraja.barajaCrupier.remove(0);
@@ -47,7 +47,21 @@ public class Crupier{
 			else
 				break;
 		}
+		return(manoCrupier.valorMano() <= 21); // Devuelve true si el crupier no se ha pasado de 21
 	}
-
-	//	Método para decidir si repartirse una carta a sí mismo
+	
+	public String verificarGanador () {
+		if (jugador.manoJugador.valorMano() > manoCrupier.valorMano())
+			return ("Jugador gana");
+		else if (jugador.manoJugador.valorMano() < manoCrupier.valorMano())
+			return ("Crupier gana");
+		else
+			return ("Empate");
+	}
+	
+		public void reiniciarPartida() {
+			manoCrupier.reiniciarMano();
+			jugador.manoJugador.reiniciarMano();
+			baraja.reiniciarBaraja();
+		}
 }
