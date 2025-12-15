@@ -2,8 +2,8 @@
 
 import java.util.ArrayList;
 
-public class imprimirCartas {
-	public imprimirCartas (){}
+public class ImprimirCartas {
+	public ImprimirCartas (){}
 
 	public void imprimir(ArrayList<String> cartas)
 	{

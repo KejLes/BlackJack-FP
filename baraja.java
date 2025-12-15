@@ -3,7 +3,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class baraja {
+public class Baraja {
 	ArrayList<String> barajaCrupier = new ArrayList<>(List.of(
 		"A♠","2♠","3♠","4♠","5♠","6♠","7♠","8♠","9♠","10♠","J♠","Q♠","K♠",
 		"A♥","2♥","3♥","4♥","5♥","6♥","7♥","8♥","9♥","10♥","J♥","Q♥","K♥",
@@ -11,7 +11,7 @@ public class baraja {
 		"A♣","2♣","3♣","4♣","5♣","6♣","7♣","8♣","9♣","10♣","J♣","Q♣","K♣"
 	));
 	
-	public baraja(){}
+	public Baraja(){}
 	
 	public ArrayList<String> barajar(){
 		int randNum;

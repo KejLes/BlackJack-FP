@@ -10,4 +10,5 @@ Clase baraja: como tal ya está hecha, mezcla la baraja
 Clase jugador: tiene una mano y dinero, y método para apostar
 	- No puede apostar más dinero del que tiene
 Clase crupier: tiene una mano, gestiona la baraja y reparte cartas (o lo hace la clase baraja)
+
 Main: orden para ejecutarlo todo y las impresiones, tiene las entradas de Scanner y maneja errores de entrada
