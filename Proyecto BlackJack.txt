@@ -5,6 +5,9 @@ Clase Mano, Representa un conjunto de cartas.
 	La usaré para añadir a cada quien una mano
 		- Mano crupier
 		- Mano jugador
-Clase baraja: como tal ya está hecha
-
-Clase mesa: pensaré en cómo implementarlo, supongo que tendría las funciones de hit, double, stand
+Clase baraja: como tal ya está hecha, mezcla la baraja
+	- Añadir la función repartir y que cree el objeto de mano
+Clase jugador: tiene una mano y dinero, y método para apostar
+	- No puede apostar más dinero del que tiene
+Clase crupier: tiene una mano, gestiona la baraja y reparte cartas (o lo hace la clase baraja)
+Main: orden para ejecutarlo todo y las impresiones, tiene las entradas de Scanner y maneja errores de entrada
