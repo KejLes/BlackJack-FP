@@ -13,7 +13,7 @@ public class Baraja {
 	
 	public Baraja(){}
 	
-	public ArrayList<String> barajar(){
+	public void barajar(){
 		int randNum;
 		for (int i = 0; i < 10; i++)
 		{
@@ -27,22 +27,5 @@ public class Baraja {
 			barajaCrupier = barajaTemp;
 			barajaTemp = null;
 		}
-		return (barajaCrupier);
-	}
-	public static void main(String[] args) {
-		baraja baraja = new baraja();
-		imprimirCartas imp = new imprimirCartas();
-
-		System.out.println(baraja.barajar());
-
-		ArrayList<String> list = new ArrayList<>();
-
-		String a = "#" + baraja.barajaCrupier.get(0);
-		list.add(a);
-		list.add(baraja.barajaCrupier.get(1));
-		list.add(baraja.barajaCrupier.get(2));
-		list.add(baraja.barajaCrupier.get(3));
-
-		imp.imprimir(list);
 	}
 }

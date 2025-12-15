@@ -1,14 +1,37 @@
 Proyecto BlackJack
 
+Reglas que no aparecen en el aula virtual:
+	Si gana el jugador con la mano (blackjack: As + 10/J/Q/K), entonces gana 1,5 veces las cantidad apostada, en cualquier
+	otro caso gana la misma cantidad apostada.
+		Ejemplo:
+		- Jugador apuesta 10€ y gana con la mano 5+6+10, gana 20€, 10€ suyos apostados + 10€ de la banca
+		- Jugador apuesta 10€ y gana con la mano A + 10, gana 25€, 10€ suyos apostados + 15€ de la banca
+
 Clase carta, no la usaré
-Clase Mano, Representa un conjunto de cartas.
+Clase Mano, Representa un conjunto de cartas
+	Métodos:
+		- Calcular el valor de la mano
+		- Imprimir las cartas (incluso si es oculta)
 	La usaré para añadir a cada quien una mano
 		- Mano crupier
 		- Mano jugador
-Clase baraja: como tal ya está hecha, mezcla la baraja
-	- Añadir la función repartir y que cree el objeto de mano
+Clase baraja: tiene la baraja ordenada
+	Métodos:
+		- Mezcla la baraja
+	- Añadir la función repartir y que cree el objeto de mano (o lo hace el crupier?)
 Clase jugador: tiene una mano y dinero, y método para apostar
 	- No puede apostar más dinero del que tiene
-Clase crupier: tiene una mano, gestiona la baraja y reparte cartas (o lo hace la clase baraja)
+Clase crupier: tiene una mano, gestiona la baraja y reparte cartas (baraja las cartas a través de un método de la clase Baraja)
 
 Main: orden para ejecutarlo todo y las impresiones, tiene las entradas de Scanner y maneja errores de entrada
+
+No se va a poder apostar centimos
+
+El jugador no puede apostar más si no tiene dinero
+
+(En el double down, sólo se puede elgir esta opción tras recibir las dos primeras cartas, y una vez decidido, te
+dan una carta más y te plantas obligatoriamente)
+En el double down, sólo se puede hacer si tienes el mismo o más del monto apostado
+	Casos:
+		- Si tienes 20€ y apuestas 10€ puedes doblar, entonces tu apuesta sube a 20€
+		- Si tienes 15€ y apuestas 10€, no puedes doblar ya que sólo te quedan 5€
